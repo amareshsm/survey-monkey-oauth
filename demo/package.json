@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "start": "nodemon --watch src index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "survey-monkey-oauth": "file:.."
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
