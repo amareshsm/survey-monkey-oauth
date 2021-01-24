@@ -3,5 +3,4 @@
 *.html
 /coverage
 *.md
-documentation/build
 build
