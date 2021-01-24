@@ -1,0 +1,41 @@
+{
+  "name": "survey-monkey-oauth",
+  "version": "1.0.0",
+  "description": "survey monkey oauth authencation.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint \"**/*.{js,jsx}\"  && prettier \"**/*.js\"",
+    "lint:fix": "eslint \"**/*.js\" --fix && prettier \"**/*.js\" --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix"
+    ]
+  },
+  "keywords": [
+    "survey monkey npm",
+    "survey monkey oauth",
+    "survey monkey oauth npm",
+    "survey monkey api npm"
+  ],
+  "author": "AMARESH S M",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  }
+}
