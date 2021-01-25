@@ -6,6 +6,7 @@ const lib = require('survey-monkey-oauth')({
   clientSecret: 'your client secret',
   baseURL: 'http://localhost:3000/',
   redirectPath: '/callback/',
+  scope: '',
 })
 // on success
 lib.on('success', (tokenRes, res) => {

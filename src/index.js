@@ -4,16 +4,38 @@ const events = require('events')
 const qs = require('qs')
 
 module.exports = function (params) {
-  const state = crypto.randomBytes(8).toString('hex')
-  if (!params.baseURL) params.baseURL = 'http://localhost:3000'
-  if (!params.redirectPath) params.redirectPath = '/callback/'
-  const redirectURL = new URL(params.redirectPath, params.baseURL)
-  if (typeof params.scope === 'undefined')
-    params.scope = 'surveys_read'
   const emitter = new events.EventEmitter()
 
+  function validate() {
+    if (!params)
+      return {
+        status: false,
+        msg:
+          'configuration paramters - client id, client secret are missing',
+      }
+    if (!params.clientId)
+      return { status: false, msg: 'client id is missing' }
+    if (!params.clientSecret)
+      return { status: false, msg: 'client secret is missing' }
+    return { status: true, msg: 'success' }
+  }
+  const state = crypto.randomBytes(8).toString('hex')
+
   function authorize(req, res) {
-    console.log('rURL', redirectURL)
+    const result = validate()
+    if (!result.status)
+      return emitter.emit(
+        'error',
+        {
+          error: result.msg,
+        },
+        { response: 'validation failed' },
+      )
+    if (!params.baseURL) params.baseURL = 'http://localhost:3000'
+    if (!params.redirectPath) params.redirectPath = '/callback/'
+    const redirectURL = new URL(params.redirectPath, params.baseURL)
+    if (typeof params.scope === 'undefined')
+      params.scope = 'surveys_read'
     const url =
       'https://api.surveymonkey.com/oauth/authorize' +
       '?client_id=' +
@@ -30,9 +52,18 @@ module.exports = function (params) {
   }
 
   function generateToken(req, resp) {
+    const result = validate()
+    if (!result.status)
+      return emitter.emit(
+        'error',
+        {
+          error: result.msg,
+        },
+        { response: 'validation failed' },
+      )
+    const redirectURL = new URL(params.redirectPath, params.baseURL)
     const codeURL = new URL(req.url, params.baseURL)
     const code = codeURL.searchParams.get('code')
-    console.log('code', codeURL.searchParams.get('code'))
     if (!code)
       return emitter.emit(
         'error',

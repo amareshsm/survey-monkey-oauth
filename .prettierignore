@@ -4,3 +4,5 @@
 /coverage
 *.md
 build
+.nyc_output
+coverage
