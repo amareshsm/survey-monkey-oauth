@@ -2,8 +2,8 @@ const http = require('http')
 const port = 3000
 const hostname = '127.0.0.1'
 const lib = require('survey-monkey-oauth')({
-  clientId: 'RwNDD9rjQTuIvioTN-SkeQ',
-  clientSecret: '117615308690000773230667792595522339738',
+  clientId: 'your client id',
+  clientSecret: 'your client secret',
   baseURL: 'http://localhost:3000/',
   redirectPath: '/callback/',
 })
