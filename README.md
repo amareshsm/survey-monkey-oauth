@@ -1,7 +1,7 @@
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC) 
 [![1.0](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/react-js-css-loaders)
 
-# survey monkey oauth #
+# SurveyMonkey oauth #
 Oauth2 authentication tools for SurveyMonkey
 ## Quick overview ##
 ### Step 1: Configuration setup ###
@@ -68,7 +68,7 @@ server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`)
 })
 ```
-##### ***Note: redirectPath and callback route which initiates authorization process must be the same** #####
+##### ***Note: redirectPath and callback route which initiates authorization process must be the same*** #####
 #### [Using express](https://github.com/amareshsm/survey-monkey-oauth/tree/master/demo/express-framework)  ####
 ```
 const express = require('express')
