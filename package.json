@@ -5,6 +5,9 @@
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "sideEffects": "false",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint \"**/*.{js,jsx}\"  && prettier \"**/*.js\"",
     "lint:fix": "eslint \"**/*.js\" --fix && prettier \"**/*.js\" --write",
@@ -13,7 +16,8 @@
     "test": "tap",
     "test:fix": "tap --snapshot",
     "test:coverage": "tap --coverage-report=html",
-    "posttest": "tap --coverage-report=text-lcov | codecov"
+    "posttest": "tap --coverage-report=text-lcov | codecov",
+    "prepublishOnly": "npm run build"
   },
   "husky": {
     "hooks": {
