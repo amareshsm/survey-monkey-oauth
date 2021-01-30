@@ -1,5 +1,6 @@
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC) 
 [![1.0](https://badge.fury.io/js/survey-monkey-streams.svg)](//npmjs.com/package/react-js-css-loaders)
+[![Build Status](https://travis-ci.org/amareshsm/survey-monkey-oauth.svg?branch=master)](https://travis-ci.org/amareshsm/survey-monkey-oauth)
 
 # SurveyMonkey oauth #
 Oauth2 authentication tools for SurveyMonkey
